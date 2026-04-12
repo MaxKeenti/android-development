@@ -72,10 +72,10 @@
 | CONV-03 | Phase 1 | Pending |
 
 **Coverage:**
-- v1 requirements: 13 total
-- Mapped to phases: 13
+- v1 requirements: 14 total
+- Mapped to phases: 14
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-12*
-*Last updated: 2026-04-12 after initial definition*
+*Last updated: 2026-04-12 after roadmap creation (coverage count corrected to 14)*
