@@ -5,7 +5,7 @@ milestone_name: milestone
 status: phase_complete
 stopped_at: Phase 02 complete — 1/1 plans executed
 last_updated: "2026-04-12T23:40:00.000Z"
-last_activity: 2026-04-12 -- Quick task 260412-oeb complete (news-improved LazyColumn + UUID)
+last_activity: 2026-04-12 -- Completed quick task 260412-oo1: it seems agent forgot to commit some changes
 progress:
   total_phases: 2
   completed_phases: 2
@@ -71,6 +71,12 @@ None yet.
 ### Blockers/Concerns
 
 - Confirm with teacher whether a future jukebox-evolution task belongs in `ui/` or `media/` depending on what that task teaches
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260412-oo1 | it seems agent forgot to commit some changes | 2026-04-12 | c217eeb | [260412-oo1-it-seems-agent-forgot-to-commit-some-cha](./quick/260412-oo1-it-seems-agent-forgot-to-commit-some-cha/) |
 
 ## Session Continuity
 
