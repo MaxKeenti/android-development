@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Android project build artifacts and IDE files in subdirectories
+**/build/
+**/.idea/
+**/local.properties
+**/.gradle/

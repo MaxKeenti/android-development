@@ -31,10 +31,10 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [x] 01-01-PLAN.md — Relocate news and jukebox apps into ui/<task>/ structure
-- [ ] 01-02-PLAN.md — Replace German strings in news app; delete placeholder ExampleUnitTest.kt files
-- [ ] 01-03-PLAN.md — Write retroactive NOTES.md for news app
-- [ ] 01-04-PLAN.md — Write retroactive NOTES.md for jukebox app (with MediaPlayer limitation)
-- [ ] 01-05-PLAN.md — Create root README.md and ui/README.md with inline conventions
+- [x] 01-02-PLAN.md — Replace German strings in news app; delete placeholder ExampleUnitTest.kt files
+- [x] 01-03-PLAN.md — Write retroactive NOTES.md for news app
+- [x] 01-04-PLAN.md — Write retroactive NOTES.md for jukebox app (with MediaPlayer limitation)
+- [x] 01-05-PLAN.md — Create root README.md and ui/README.md with inline conventions
 
 ### Phase 2: Ongoing Task Accumulation
 **Goal**: Every teacher-assigned task that arrives in the future lands in the correct topic folder with a `NOTES.md` already written — the repo grows indefinitely without accumulating the debt that Phase 1 had to pay
