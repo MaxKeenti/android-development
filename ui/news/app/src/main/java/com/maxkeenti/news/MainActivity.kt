@@ -21,10 +21,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun UIMainActivity() {
     News(
-        title = "Heute ist Freitag",
-        author = "Ich",
-        date = "Es ist Freitag, 20. März 2026",
-        content = "Ich denke dass diesem app in meinem Handy ist Lustig!")
+        title = "Article Title",
+        author = "Author Name",
+        date = "March 20, 2026",
+        content = "Article content goes here. This is a placeholder demonstrating the News card layout.")
 }
 
 @Preview(showBackground = true)
@@ -32,9 +32,9 @@ fun UIMainActivity() {
 fun GreetingPreview() {
     NewsTheme {
         News(
-            title = "Heute ist Freitag",
-            author = "Ich",
-            date = "Es ist Freitag, 20. März 2026",
-            content = "Ich denke dass diesem app in meinem Handy ist Lustig!")
+            title = "Article Title",
+            author = "Author Name",
+            date = "March 20, 2026",
+            content = "Article content goes here. This is a placeholder demonstrating the News card layout.")
     }
 }
