@@ -27,7 +27,14 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Root `README.md` exists and lists both tasks under the `ui/` topic — a new reader can navigate the repo from it
   4. A topic-level `README.md` exists at `ui/` since that topic has 2 tasks
   5. The `NOTES.md` template, topic decision gate, and package naming convention are each written down in one place
-**Plans**: TBD
+**Plans:** 5 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Relocate news and jukebox apps into ui/<task>/ structure
+- [ ] 01-02-PLAN.md — Replace German strings in news app; delete placeholder ExampleUnitTest.kt files
+- [ ] 01-03-PLAN.md — Write retroactive NOTES.md for news app
+- [ ] 01-04-PLAN.md — Write retroactive NOTES.md for jukebox app (with MediaPlayer limitation)
+- [ ] 01-05-PLAN.md — Create root README.md and ui/README.md with inline conventions
 
 ### Phase 2: Ongoing Task Accumulation
 **Goal**: Every teacher-assigned task that arrives in the future lands in the correct topic folder with a `NOTES.md` already written — the repo grows indefinitely without accumulating the debt that Phase 1 had to pay
@@ -47,5 +54,5 @@ Phases execute in numeric order: 1 → 2
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Reorganize and Bootstrap | 0/TBD | Not started | - |
+| 1. Reorganize and Bootstrap | 0/5 | Not started | - |
 | 2. Ongoing Task Accumulation | N/A | Not started | - |
