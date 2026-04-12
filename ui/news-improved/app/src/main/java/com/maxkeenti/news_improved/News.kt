@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.weight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -12,6 +13,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -19,26 +25,75 @@ fun News(title: String, author: String, date: String, content: String) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp),
+            .padding(horizontal = 8.dp, vertical = 4.dp),
         shape = RoundedCornerShape(4.dp),
-        elevation = CardDefaults.cardElevation(4.dp)
+        colors = CardDefaults.cardColors(containerColor = Color(0xFFD0D0D0)),
+        elevation = CardDefaults.cardElevation(2.dp)
     ) {
         Column {
+            // Black title header
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(Color.Black)
-                    .padding(12.dp)
+                    .padding(horizontal = 12.dp, vertical = 10.dp)
             ) {
-                Text(text = title, color = Color.White)
+                Text(
+                    text = title,
+                    color = Color.White,
+                    fontStyle = FontStyle.Italic,
+                    fontWeight = FontWeight.Bold
+                )
             }
-            Row {
-                Column {
-                    Text(text = author)
-                    Text(text = date)
+
+            // Body: two white inner cards side by side
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+            ) {
+                // Left card: author + date
+                Card(
+                    modifier = Modifier
+                        .weight(0.4f)
+                        .padding(end = 4.dp),
+                    shape = RoundedCornerShape(4.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.White),
+                    elevation = CardDefaults.cardElevation(0.dp)
+                ) {
+                    Column(modifier = Modifier.padding(8.dp)) {
+                        Text(
+                            text = buildAnnotatedString {
+                                append("Publicado por:\n")
+                                withStyle(SpanStyle(fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic)) {
+                                    append(author)
+                                }
+                            }
+                        )
+                        Text(
+                            text = buildAnnotatedString {
+                                append("\nEl:\n")
+                                withStyle(SpanStyle(fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic)) {
+                                    append(date)
+                                }
+                            }
+                        )
+                    }
                 }
-                Column {
-                    Text(text = content)
+
+                // Right card: content
+                Card(
+                    modifier = Modifier
+                        .weight(0.6f)
+                        .padding(start = 4.dp),
+                    shape = RoundedCornerShape(4.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.White),
+                    elevation = CardDefaults.cardElevation(0.dp)
+                ) {
+                    Text(
+                        text = content,
+                        modifier = Modifier.padding(8.dp)
+                    )
                 }
             }
         }
