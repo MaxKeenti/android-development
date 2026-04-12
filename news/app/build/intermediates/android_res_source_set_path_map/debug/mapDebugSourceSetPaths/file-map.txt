@@ -1,0 +1,7 @@
+com.maxkeenti.news.app-pngs-0 /Users/maximilianogonzalezcalzada/Library/Mobile Documents/com~apple~CloudDocs/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/news/app/build/generated/res/pngs/debug
+com.maxkeenti.news.app-updated_navigation_xml-1 /Users/maximilianogonzalezcalzada/Library/Mobile Documents/com~apple~CloudDocs/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/news/app/build/generated/updated_navigation_xml/debug
+com.maxkeenti.news.app-packageDebugResources-2 /Users/maximilianogonzalezcalzada/Library/Mobile Documents/com~apple~CloudDocs/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/news/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.maxkeenti.news.app-packageDebugResources-3 /Users/maximilianogonzalezcalzada/Library/Mobile Documents/com~apple~CloudDocs/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/news/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.maxkeenti.news.app-debug-4 /Users/maximilianogonzalezcalzada/Library/Mobile Documents/com~apple~CloudDocs/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/news/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.maxkeenti.news.app-debug-5 /Users/maximilianogonzalezcalzada/Library/Mobile Documents/com~apple~CloudDocs/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/news/app/src/debug/res
+com.maxkeenti.news.app-main-6 /Users/maximilianogonzalezcalzada/Library/Mobile Documents/com~apple~CloudDocs/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/news/app/src/main/res
