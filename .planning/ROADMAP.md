@@ -45,7 +45,10 @@ Plans:
   2. Each new task folder contains a `NOTES.md` using the template established in Phase 1
   3. Root `README.md` is updated each time a task is added
   4. A topic-level `README.md` is added or updated whenever a topic reaches 2 or more tasks
-**Plans**: N/A (open-ended; no plan files; this is a repeatable workflow, not a bounded execution)
+**Plans:** 1 plan (workflow playbook — re-executed for each new task)
+
+Plans:
+- [ ] 02-01-PLAN.md — Repeatable workflow: add any new teacher-assigned task to the correct topic folder with NOTES.md and updated README files
 
 ## Progress
 
@@ -54,5 +57,5 @@ Phases execute in numeric order: 1 → 2
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Reorganize and Bootstrap | 0/5 | Not started | - |
-| 2. Ongoing Task Accumulation | N/A | Not started | - |
+| 1. Reorganize and Bootstrap | 5/5 | Complete | 2026-04-12 |
+| 2. Ongoing Task Accumulation | 0/1 | Not started | - |
