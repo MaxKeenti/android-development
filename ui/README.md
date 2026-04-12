@@ -8,6 +8,7 @@ Tasks in this topic teach Jetpack Compose UI concepts: layout, components, themi
 |------|----------------|-------|
 | [news](news/) | `Card` layout, composable parameters | [NOTES.md](news/NOTES.md) |
 | [jukebox](jukebox/) | `LazyVerticalGrid`, tap-to-play with `MediaPlayer` | [NOTES.md](jukebox/NOTES.md) |
+| [news-improved](news-improved/) | `LazyColumn`, scrollable lists, `Settings.Secure` device ID | [NOTES.md](news-improved/NOTES.md) |
 
 ## When to Add to ui/
 

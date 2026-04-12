@@ -10,6 +10,7 @@ A personal reference repo for Android development tasks assigned by my teacher. 
 |------|---------------------|
 | [news](ui/news/) | Jetpack Compose `Card` layout with composable parameters |
 | [jukebox](ui/jukebox/) | `LazyVerticalGrid` with `MediaPlayer` tap-to-play audio |
+| [news-improved](ui/news-improved/) | Reuses `News` card in a `LazyColumn` to show 10 items; reads device UUID via `Settings.Secure` |
 
 See [ui/README.md](ui/README.md) for the topic overview.
 
