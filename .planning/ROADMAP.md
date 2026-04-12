@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 5 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Relocate news and jukebox apps into ui/<task>/ structure
+- [x] 01-01-PLAN.md — Relocate news and jukebox apps into ui/<task>/ structure
 - [ ] 01-02-PLAN.md — Replace German strings in news app; delete placeholder ExampleUnitTest.kt files
 - [ ] 01-03-PLAN.md — Write retroactive NOTES.md for news app
 - [ ] 01-04-PLAN.md — Write retroactive NOTES.md for jukebox app (with MediaPlayer limitation)
