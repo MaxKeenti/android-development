@@ -62,6 +62,7 @@ fun News(title: String, author: String, date: String, content: String) {
                 ) {
                     Column(modifier = Modifier.padding(8.dp)) {
                         Text(
+                            color = Color.Black,
                             text = buildAnnotatedString {
                                 append("Publicado por:\n")
                                 withStyle(SpanStyle(fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic)) {
@@ -70,6 +71,7 @@ fun News(title: String, author: String, date: String, content: String) {
                             }
                         )
                         Text(
+                            color = Color.Black,
                             text = buildAnnotatedString {
                                 append("\nEl:\n")
                                 withStyle(SpanStyle(fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic)) {
@@ -91,7 +93,8 @@ fun News(title: String, author: String, date: String, content: String) {
                 ) {
                     Text(
                         text = content,
-                        modifier = Modifier.padding(8.dp)
+                        modifier = Modifier.padding(8.dp),
+                        color = Color.Black
                     )
                 }
             }
