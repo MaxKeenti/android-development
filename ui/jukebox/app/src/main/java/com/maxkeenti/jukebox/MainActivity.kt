@@ -31,15 +31,15 @@ class MainActivity : ComponentActivity() {
 
         // Sample Data - Replace with your actual resource IDs
         val items = listOf(
-            JukeboxItem("Anakin", R.drawable.anakin, R.raw.anakin_1),
-            JukeboxItem("Chewie", R.drawable.chewie, R.raw.chewie),
-            JukeboxItem("Han", R.drawable.han, R.raw.han),
-            JukeboxItem("Lando", R.drawable.lando, R.raw.lando),
-            JukeboxItem("Luke", R.drawable.luke, R.raw.luke),
-            JukeboxItem("Saber", R.drawable.saber, R.raw.saber),
-            JukeboxItem("Vader", R.drawable.vader, R.raw.vader),
-            JukeboxItem("Yoda", R.drawable.yoda, R.raw.yoda),
-            JukeboxItem("Gsatito", R.drawable.gatito, R.raw.message_1)
+            JukeboxItem("badgejapaneseyen", R.drawable.badgejapaneseyen, R.raw.alert01),
+            JukeboxItem("badgeminus", R.drawable.badgeminus, R.raw.alert02),
+            JukeboxItem("badgepercent", R.drawable.badgepercent, R.raw.alert03),
+            JukeboxItem("badgeplus", R.drawable.badgeplus, R.raw.alert04),
+            JukeboxItem("badgepoundsterling", R.drawable.badgepoundsterling, R.raw.alert05),
+            JukeboxItem("badgequestionmark", R.drawable.badgequestionmark, R.raw.alert06),
+            JukeboxItem("badgerussianruble", R.drawable.badgerussianruble, R.raw.alert07),
+            JukeboxItem("badgeswissfranc", R.drawable.badgeswissfranc, R.raw.alert07),
+            JukeboxItem("badgeturkishlira", R.drawable.badgeturkishlira, R.raw.alert08)
         )
 
         setContent {
