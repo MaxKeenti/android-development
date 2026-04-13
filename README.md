@@ -14,6 +14,14 @@ A personal reference repo for Android development tasks assigned by my teacher. 
 
 See [ui/README.md](ui/README.md) for the topic overview.
 
+### sensors/ — Sensors & Hardware APIs
+
+| Task | What It Demonstrates |
+|------|---------------------|
+| [sensor-management](sensors/sensor-management/) | `SensorManager` + `SensorEventListener` for detecting sensor changes with runtime permission handling |
+
+See [sensors/README.md](sensors/README.md) for the topic overview.
+
 ---
 
 ## NOTES.md Template
