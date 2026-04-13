@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.weight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -52,10 +51,10 @@ fun News(title: String, author: String, date: String, content: String) {
                     .fillMaxWidth()
                     .padding(8.dp)
             ) {
-                // Left card: author + date
+                // Left card: author + date (40% width)
                 Card(
                     modifier = Modifier
-                        .weight(0.4f)
+                        .fillMaxWidth(0.4f)
                         .padding(end = 4.dp),
                     shape = RoundedCornerShape(4.dp),
                     colors = CardDefaults.cardColors(containerColor = Color.White),
@@ -81,10 +80,10 @@ fun News(title: String, author: String, date: String, content: String) {
                     }
                 }
 
-                // Right card: content
+                // Right card: content (60% width)
                 Card(
                     modifier = Modifier
-                        .weight(0.6f)
+                        .fillMaxWidth(1.0f)
                         .padding(start = 4.dp),
                     shape = RoundedCornerShape(4.dp),
                     colors = CardDefaults.cardColors(containerColor = Color.White),
