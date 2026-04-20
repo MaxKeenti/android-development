@@ -22,6 +22,14 @@ See [ui/README.md](ui/README.md) for the topic overview.
 
 See [sensors/README.md](sensors/README.md) for the topic overview.
 
+### data/ — Data Persistence
+
+| Task | What It Demonstrates |
+|------|---------------------|
+| [sqlite-connection](data/sqlite-connection/) | Basic SQLite connection object setup for a local Android database |
+
+See [data/README.md](data/README.md) for the topic overview.
+
 ---
 
 ## NOTES.md Template
