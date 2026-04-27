@@ -26,7 +26,7 @@ DeleteProductActivity  — delete confirmation screen (Delete), receives product
 
 Supporting files:
 ```
-Product.kt             — data class (id, name, price, category, stock)
+Product.kt             — data class (id, name, price, country, stock)
 ProductDatabaseHelper  — SQLiteOpenHelper with insert/getAll/getById/update/delete
 ProductValidator.kt    — pure validation logic, returns ProductFormErrors
 ```
@@ -38,11 +38,11 @@ All write operations use `compileStatement()` with `use { }` (auto-closes the st
 ```kotlin
 fun insert(product: Product): Long {
     return writableDatabase.compileStatement(
-        "INSERT INTO products (name, price, category, stock) VALUES (?, ?, ?, ?)"
+        "INSERT INTO products (name, price, country, stock) VALUES (?, ?, ?, ?)"
     ).use { stmt ->
         stmt.bindString(1, product.name)
         stmt.bindDouble(2, product.price)
-        stmt.bindString(3, product.category)
+        stmt.bindString(3, product.country)
         stmt.bindLong(4, product.stock.toLong())
         stmt.executeInsert()
     }
@@ -76,7 +76,7 @@ var submitted by remember { mutableStateOf(false) }
 OutlinedTextField(
     onValueChange = {
         name = it
-        if (submitted) errors = validateProductForm(it, price, category, stock)
+        if (submitted) errors = validateProductForm(it, price, country, stock)
     },
     isError = errors.name != null,
     supportingText = errors.name?.let { msg -> { Text(msg) } }
@@ -86,7 +86,7 @@ OutlinedTextField(
 Rules enforced:
 - Name: not blank, max 100 chars
 - Price: not blank, valid positive decimal
-- Category: not blank
+- Country: not blank
 - Stock: not blank, valid non-negative integer
 
 ## 7. What Was Hard
