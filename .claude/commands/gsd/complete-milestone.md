@@ -19,8 +19,8 @@ Output: Milestone archived (roadmap + requirements), PROJECT.md evolved, git tag
 <execution_context>
 **Load these files NOW (before proceeding):**
 
-- @/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/complete-milestone.md (main workflow)
-- @/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/templates/milestone-archive.md (archive template)
+- @/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/complete-milestone.md (main workflow)
+- @/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/templates/milestone-archive.md (archive template)
   </execution_context>
 
 <context>

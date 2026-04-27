@@ -19,7 +19,7 @@ Output: Forensic report saved to `.planning/forensics/`, presented inline, with 
 </objective>
 
 <execution_context>
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/forensics.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/forensics.md
 </execution_context>
 
 <context>
@@ -36,7 +36,7 @@ Output: Forensic report saved to `.planning/forensics/`, presented inline, with 
 </context>
 
 <process>
-Read and execute the forensics workflow from @/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/forensics.md end-to-end.
+Read and execute the forensics workflow from @/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/forensics.md end-to-end.
 </process>
 
 <success_criteria>

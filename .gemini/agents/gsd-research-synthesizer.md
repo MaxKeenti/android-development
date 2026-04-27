@@ -23,7 +23,7 @@ You are spawned by:
 Your job: Create a unified research summary that informs roadmap creation. Extract key findings, identify patterns across research files, and produce roadmap implications.
 
 **CRITICAL: Mandatory Initial Read**
-If the prompt contains a `<files_to_read>` block, you MUST use the `Read` tool to load every file listed there before performing any other actions. This is your primary context.
+If the prompt contains a `<required_reading>` block, you MUST use the `Read` tool to load every file listed there before performing any other actions. This is your primary context.
 
 **Core responsibilities:**
 - Read all 4 research files (STACK.md, FEATURES.md, ARCHITECTURE.md, PITFALLS.md)
@@ -60,7 +60,7 @@ cat .planning/research/FEATURES.md
 cat .planning/research/ARCHITECTURE.md
 cat .planning/research/PITFALLS.md
 
-# Planning config loaded via gsd-tools.cjs in commit step
+# Planning config loaded via gsd-sdk query (or gsd-tools.cjs) in commit step
 ```
 
 Parse each file to extract:
@@ -132,7 +132,7 @@ Identify gaps that couldn't be resolved and need attention during planning.
 
 **ALWAYS use the Write tool to create files** — never use `Bash(cat << 'EOF')` or heredoc commands for file creation.
 
-Use template: /Users/maximilianogonzalezcalzada/Source/Personal/android-development/.gemini/get-shit-done/templates/research-project/SUMMARY.md
+Use template: /Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.gemini/get-shit-done/templates/research-project/SUMMARY.md
 
 Write to `.planning/research/SUMMARY.md`
 
@@ -141,7 +141,7 @@ Write to `.planning/research/SUMMARY.md`
 The 4 parallel researcher agents write files but do NOT commit. You commit everything together.
 
 ```bash
-node "/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.gemini/get-shit-done/bin/gsd-tools.cjs" commit "docs: complete project research" --files .planning/research/
+gsd-sdk query commit "docs: complete project research" .planning/research/
 ```
 
 ## Step 8: Return Summary
@@ -152,7 +152,7 @@ Return brief confirmation with key points for the orchestrator.
 
 <output_format>
 
-Use template: /Users/maximilianogonzalezcalzada/Source/Personal/android-development/.gemini/get-shit-done/templates/research-project/SUMMARY.md
+Use template: /Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.gemini/get-shit-done/templates/research-project/SUMMARY.md
 
 Key sections:
 - Executive Summary (2-3 paragraphs)

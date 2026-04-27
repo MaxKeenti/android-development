@@ -19,7 +19,7 @@ Routes to the pause-work workflow which handles:
 </objective>
 
 <execution_context>
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/pause-work.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/pause-work.md
 </execution_context>
 
 <context>
@@ -27,7 +27,7 @@ State and phase progress are gathered in-workflow with targeted reads.
 </context>
 
 <process>
-**Follow the pause-work workflow** from `@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/pause-work.md`.
+**Follow the pause-work workflow** from `@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/pause-work.md`.
 
 The workflow handles all logic including:
 1. Phase directory detection

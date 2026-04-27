@@ -15,10 +15,10 @@ Output ONLY the reference content below. Do NOT add:
 </objective>
 
 <execution_context>
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/help.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/help.md
 </execution_context>
 
 <process>
-Output the complete GSD command reference from @/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/help.md.
+Output the complete GSD command reference from @/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/help.md.
 Display the reference content directly — no additions or modifications.
 </process>

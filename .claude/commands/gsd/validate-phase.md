@@ -22,7 +22,7 @@ Output: updated VALIDATION.md + generated test files.
 </objective>
 
 <execution_context>
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/validate-phase.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/validate-phase.md
 </execution_context>
 
 <context>
@@ -30,6 +30,6 @@ Phase: $ARGUMENTS — optional, defaults to last completed phase.
 </context>
 
 <process>
-Execute @/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/validate-phase.md.
+Execute @/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/validate-phase.md.
 Preserve all workflow gates.
 </process>

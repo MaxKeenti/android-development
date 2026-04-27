@@ -33,14 +33,14 @@ Initialize a new project through unified flow: questioning → research (optiona
 </objective>
 
 <execution_context>
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/new-project.md
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/references/questioning.md
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/references/ui-brand.md
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/templates/project.md
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/templates/requirements.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/new-project.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/references/questioning.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/references/ui-brand.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/templates/project.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/templates/requirements.md
 </execution_context>
 
 <process>
-Execute the new-project workflow from @/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/new-project.md end-to-end.
+Execute the new-project workflow from @/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/new-project.md end-to-end.
 Preserve all workflow gates (validation, approvals, commits, routing).
 </process>

@@ -18,7 +18,7 @@ One command creates all fix phases — no manual `/gsd-add-phase` per gap.
 </objective>
 
 <execution_context>
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/plan-milestone-gaps.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/plan-milestone-gaps.md
 </execution_context>
 
 <context>
@@ -29,6 +29,6 @@ Original intent and current planning state are loaded on demand inside the workf
 </context>
 
 <process>
-Execute the plan-milestone-gaps workflow from @/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/plan-milestone-gaps.md end-to-end.
+Execute the plan-milestone-gaps workflow from @/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/plan-milestone-gaps.md end-to-end.
 Preserve all workflow gates (audit loading, prioritization, phase grouping, user confirmation, roadmap updates).
 </process>

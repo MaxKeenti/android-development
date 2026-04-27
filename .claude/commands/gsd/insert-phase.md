@@ -4,7 +4,6 @@ description: Insert urgent work as decimal phase (e.g., 72.1) between existing p
 argument-hint: <after> <description>
 allowed-tools:
   - Read
-  - Write
   - Bash
 ---
 
@@ -17,7 +16,7 @@ Purpose: Handle urgent work discovered during execution without renumbering enti
 </objective>
 
 <execution_context>
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/insert-phase.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/insert-phase.md
 </execution_context>
 
 <context>
@@ -27,6 +26,6 @@ Roadmap and state are resolved in-workflow via `init phase-op` and targeted tool
 </context>
 
 <process>
-Execute the insert-phase workflow from @/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/insert-phase.md end-to-end.
+Execute the insert-phase workflow from @/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/insert-phase.md end-to-end.
 Preserve all validation gates (argument parsing, phase verification, decimal calculation, roadmap updates).
 </process>

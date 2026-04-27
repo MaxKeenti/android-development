@@ -22,9 +22,10 @@ Future: `--prd` mode for PRD extraction is planned for a follow-up PR.
 </objective>
 
 <execution_context>
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/workflows/import.md
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/references/ui-brand.md
-@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/references/gate-prompts.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/workflows/import.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/references/ui-brand.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/references/gate-prompts.md
+@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/references/doc-conflict-engine.md
 </execution_context>
 
 <context>

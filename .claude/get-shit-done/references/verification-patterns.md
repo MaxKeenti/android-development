@@ -600,7 +600,7 @@ Some things can't be verified programmatically. Flag these for human testing:
 
 For automation-first checkpoint patterns, server lifecycle management, CLI installation handling, and error recovery protocols, see:
 
-**@/Users/maximilianogonzalezcalzada/Source/Personal/android-development/.claude/get-shit-done/references/checkpoints.md** → `<automation_reference>` section
+**@/Users/moonstone/Source/UPIICSA/Plan 2021/2026 2/6NM61 Programación móvil/android-development/.claude/get-shit-done/references/checkpoints.md** → `<automation_reference>` section
 
 Key principles:
 - Claude sets up verification environment BEFORE presenting checkpoints
