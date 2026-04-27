@@ -81,7 +81,7 @@ fun Sensors(context: Context) {
     // Maze definition: proportional walls so the maze fills the screen at any size.
     // Snake path: start top-left → right → down → left → down → right → goal bottom-right
     val createMaze: (Float, Float) -> List<Rect> = { width, height ->
-        val t = height * 0.025f  // wall thickness scales with screen height
+        val t = height * 0.02f  // wall thickness scales with screen height (reduced from 0.025f)
         listOf(
             // Outer boundaries
             Rect(0f, 0f, width, t),
@@ -89,28 +89,28 @@ fun Sensors(context: Context) {
             Rect(width - t, 0f, width, height),
             Rect(0f, height - t, width, height),
 
-            // Row 1 – horizontal bar from left, gap on right (30% of width)
-            Rect(t, height * 0.18f, width * 0.70f, height * 0.18f + t),
+            // Row 1 – horizontal bar from left, gap on right (40% of width) - widened from 30%
+            Rect(t, height * 0.18f, width * 0.60f, height * 0.18f + t),
             // Row 1 right connector – vertical down from gap edge
-            Rect(width * 0.70f, height * 0.18f, width * 0.70f + t, height * 0.34f),
+            Rect(width * 0.60f, height * 0.18f, width * 0.60f + t, height * 0.34f),
 
-            // Row 2 – horizontal bar from right, gap on left (30% of width)
-            Rect(width * 0.30f, height * 0.34f, width - t, height * 0.34f + t),
+            // Row 2 – horizontal bar from right, gap on left (40% of width) - widened from 30%
+            Rect(width * 0.40f, height * 0.34f, width - t, height * 0.34f + t),
             // Row 2 left connector – vertical down from gap edge
-            Rect(width * 0.30f, height * 0.34f, width * 0.30f + t, height * 0.52f),
+            Rect(width * 0.40f, height * 0.34f, width * 0.40f + t, height * 0.52f),
 
-            // Row 3 – horizontal bar from left, gap on right (28% of width)
-            Rect(t, height * 0.52f, width * 0.72f, height * 0.52f + t),
+            // Row 3 – horizontal bar from left, gap on right (40% of width) - widened from 28%
+            Rect(t, height * 0.52f, width * 0.60f, height * 0.52f + t),
             // Row 3 right connector – vertical down from gap edge
-            Rect(width * 0.72f, height * 0.52f, width * 0.72f + t, height * 0.70f),
+            Rect(width * 0.60f, height * 0.52f, width * 0.60f + t, height * 0.70f),
 
-            // Row 4 – horizontal bar from right, gap on left (32% of width)
-            Rect(width * 0.32f, height * 0.70f, width - t, height * 0.70f + t),
+            // Row 4 – horizontal bar from right, gap on left (40% of width) - widened from 32%
+            Rect(width * 0.40f, height * 0.70f, width - t, height * 0.70f + t),
             // Row 4 left connector – vertical down to create final corridor
-            Rect(width * 0.32f, height * 0.70f, width * 0.32f + t, height * 0.86f),
+            Rect(width * 0.40f, height * 0.70f, width * 0.40f + t, height * 0.86f),
 
             // Row 5 – horizontal bar from left, gap on right toward goal
-            Rect(t, height * 0.86f, width * 0.58f, height * 0.86f + t),
+            Rect(t, height * 0.86f, width * 0.62f, height * 0.86f + t),
         )
     }
 
@@ -155,7 +155,7 @@ fun Sensors(context: Context) {
     BoxWithConstraints(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         val width = constraints.maxWidth.toFloat()
         val height = constraints.maxHeight.toFloat()
-        val radius = 30f
+        val radius = 20f  // reduced from 30f for easier navigation through corridors
         val walls = createMaze(width, height)
 
         // Goal rect in bottom-right area
