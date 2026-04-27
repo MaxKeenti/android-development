@@ -78,22 +78,39 @@ fun Sensors(context: Context) {
         mutableStateOf(false)
     }
 
-    // Maze definition: 10 hardcoded walls forming a navigable maze
+    // Maze definition: proportional walls so the maze fills the screen at any size.
+    // Snake path: start top-left → right → down → left → down → right → goal bottom-right
     val createMaze: (Float, Float) -> List<Rect> = { width, height ->
+        val t = height * 0.025f  // wall thickness scales with screen height
         listOf(
-            // Outer walls (boundaries)
-            Rect(0f, 0f, width, 20f),                    // Top wall
-            Rect(0f, 0f, 20f, height),                   // Left wall
-            Rect(width - 20f, 0f, width, height),        // Right wall
-            Rect(0f, height - 20f, width, height),       // Bottom wall
+            // Outer boundaries
+            Rect(0f, 0f, width, t),
+            Rect(0f, 0f, t, height),
+            Rect(width - t, 0f, width, height),
+            Rect(0f, height - t, width, height),
 
-            // Interior maze walls (8 walls)
-            Rect(150f, 150f, 300f, 170f),                // Horizontal wall 1
-            Rect(350f, 100f, 370f, 300f),                // Vertical wall 1
-            Rect(200f, 300f, 350f, 320f),                // Horizontal wall 2
-            Rect(100f, 400f, 300f, 420f),                // Horizontal wall 3
-            Rect(400f, 350f, 420f, 600f),                // Vertical wall 2
-            Rect(200f, 500f, 400f, 520f),                // Horizontal wall 4
+            // Row 1 – horizontal bar from left, gap on right (30% of width)
+            Rect(t, height * 0.18f, width * 0.70f, height * 0.18f + t),
+            // Row 1 right connector – vertical down from gap edge
+            Rect(width * 0.70f, height * 0.18f, width * 0.70f + t, height * 0.34f),
+
+            // Row 2 – horizontal bar from right, gap on left (30% of width)
+            Rect(width * 0.30f, height * 0.34f, width - t, height * 0.34f + t),
+            // Row 2 left connector – vertical down from gap edge
+            Rect(width * 0.30f, height * 0.34f, width * 0.30f + t, height * 0.52f),
+
+            // Row 3 – horizontal bar from left, gap on right (28% of width)
+            Rect(t, height * 0.52f, width * 0.72f, height * 0.52f + t),
+            // Row 3 right connector – vertical down from gap edge
+            Rect(width * 0.72f, height * 0.52f, width * 0.72f + t, height * 0.70f),
+
+            // Row 4 – horizontal bar from right, gap on left (32% of width)
+            Rect(width * 0.32f, height * 0.70f, width - t, height * 0.70f + t),
+            // Row 4 left connector – vertical down to create final corridor
+            Rect(width * 0.32f, height * 0.70f, width * 0.32f + t, height * 0.86f),
+
+            // Row 5 – horizontal bar from left, gap on right toward goal
+            Rect(t, height * 0.86f, width * 0.58f, height * 0.86f + t),
         )
     }
 
@@ -120,13 +137,19 @@ fun Sensors(context: Context) {
     }
 
     DisposableEffect(Unit) {
-        sensorManager.registerListener(
-            listener, acelerometro,
-            SensorManager.SENSOR_DELAY_GAME
-        )
+        if (acelerometro != null) {
+            sensorManager.registerListener(listener, acelerometro, SensorManager.SENSOR_DELAY_GAME)
+        }
         onDispose {
             sensorManager.unregisterListener(listener)
         }
+    }
+
+    if (acelerometro == null) {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Text("Accelerometer not available on this device.")
+        }
+        return
     }
 
     BoxWithConstraints(modifier = Modifier.fillMaxSize().padding(16.dp)) {
