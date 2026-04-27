@@ -80,6 +80,7 @@ None yet.
 | 260412-ovq | Update News card design: gray outer card, black title, two white inner cards | 2026-04-12 | 2a7bb04 | [260412-ovq-update-news-card-design-gray-outer-card-](./quick/260412-ovq-update-news-card-design-gray-outer-card-/) |
 | 260412-oyq | Cannot access 'val RowColumnParentData?.weight: Float': it is internal in file. inside @file:News.kt | 2026-04-12 | 85f4310 | [260412-oyq-cannot-access-val-rowcolumnparentdata-we](./quick/260412-oyq-cannot-access-val-rowcolumnparentdata-we/) |
 | 260426-lbr | Implement labyrinth game in sensor-management app with maze collision detection, win state, and reset button | 2026-04-26 | e61c220 | [260426-lbr-maze-labyrinth-game](./quick/260426-lbr-maze-labyrinth-game/) |
+| 260426-srf | Sensor-management maze goal corridor fix - add right wall to complete passage | 2026-04-26 | 84ea2a6 | [260426-srf-sensor-maze-corridor](./quick/260426-srf-sensor-maze-corridor/) |
 
 ## Session Continuity
 
