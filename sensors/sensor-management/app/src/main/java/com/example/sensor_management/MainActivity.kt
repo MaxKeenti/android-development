@@ -268,7 +268,7 @@ fun Sensors(context: Context) {
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            "Congratulations!",
+                            "¡Felicidades!",
                             style = MaterialTheme.typography.headlineSmall
                         )
                         Spacer(modifier = Modifier.padding(16.dp))
@@ -280,7 +280,7 @@ fun Sensors(context: Context) {
                                 isWon = false
                             }
                         ) {
-                            Text("Reset")
+                            Text("Reiniciar")
                         }
                     }
                 }
