@@ -172,21 +172,29 @@ fun Sensors(context: Context) {
                 val ballCenterX = (ballRect.left + ballRect.right) / 2f
                 val ballCenterY = (ballRect.top + ballRect.bottom) / 2f
 
-                // Clamp X-axis if overlapping horizontally
-                if (ballRect.right > wall.left && ballRect.left < wall.right) {
-                    if (ballCenterX < wallCenterX) {
-                        posX = wall.left - radius
-                    } else {
-                        posX = wall.right + radius
-                    }
-                }
+                // Determine which axis to resolve (prefer the axis with smallest overlap)
+                val overlapLeft = ballRect.right - wall.left
+                val overlapRight = wall.right - ballRect.left
+                val overlapTop = ballRect.bottom - wall.top
+                val overlapBottom = wall.bottom - ballRect.top
 
-                // Clamp Y-axis if overlapping vertically
-                if (ballRect.bottom > wall.top && ballRect.top < wall.bottom) {
-                    if (ballCenterY < wallCenterY) {
-                        posY = wall.top - radius
+                val minHorizontalOverlap = minOf(overlapLeft, overlapRight)
+                val minVerticalOverlap = minOf(overlapTop, overlapBottom)
+
+                // Resolve collision on the axis with smallest overlap (least disruptive)
+                if (minHorizontalOverlap <= minVerticalOverlap) {
+                    // Resolve horizontally
+                    if (ballCenterX < wallCenterX) {
+                        posX = wall.left - radius - 1f  // small buffer to prevent re-entry
                     } else {
-                        posY = wall.bottom + radius
+                        posX = wall.right + radius + 1f
+                    }
+                } else {
+                    // Resolve vertically
+                    if (ballCenterY < wallCenterY) {
+                        posY = wall.top - radius - 1f
+                    } else {
+                        posY = wall.bottom + radius + 1f
                     }
                 }
             }
@@ -204,7 +212,14 @@ fun Sensors(context: Context) {
 
         // Draw maze and ball
         Canvas(modifier = Modifier.fillMaxSize()) {
-            // Draw walls (black rectangles)
+            // Draw background (white - empty space where ball can move)
+            drawRect(
+                color = Color.White,
+                topLeft = Offset(0f, 0f),
+                size = androidx.compose.ui.geometry.Size(width, height)
+            )
+
+            // Draw walls (black rectangles - obstacles)
             for (wall in walls) {
                 drawRect(
                     color = Color.Black,
@@ -213,14 +228,14 @@ fun Sensors(context: Context) {
                 )
             }
 
-            // Draw goal area (green rectangle)
+            // Draw goal area (green rectangle - win zone)
             drawRect(
                 color = Color.Green,
                 topLeft = Offset(goalRect.left, goalRect.top),
                 size = androidx.compose.ui.geometry.Size(goalRect.width, goalRect.height)
             )
 
-            // Draw ball (red circle)
+            // Draw ball (red circle - the player-controlled object)
             drawCircle(
                 color = Color.Red,
                 radius = radius,
