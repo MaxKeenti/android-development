@@ -81,7 +81,7 @@ fun UIDeleteProductActivity(productId: Long) {
                         style = MaterialTheme.typography.titleLarge
                     )
                     Text(
-                        text = "Categoría: ${product.category}",
+                        text = "País: ${product.country}",
                         style = MaterialTheme.typography.bodyMedium
                     )
                     Text(

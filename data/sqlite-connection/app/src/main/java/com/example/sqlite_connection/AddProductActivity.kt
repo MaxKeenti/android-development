@@ -39,7 +39,7 @@ fun UIAddProductActivity() {
 
     var name by remember { mutableStateOf("") }
     var price by remember { mutableStateOf("") }
-    var category by remember { mutableStateOf("") }
+    var country by remember { mutableStateOf("") }
     var stock by remember { mutableStateOf("") }
     var errors by remember { mutableStateOf(ProductFormErrors()) }
     var submitted by remember { mutableStateOf(false) }
@@ -68,7 +68,7 @@ fun UIAddProductActivity() {
                 value = name,
                 onValueChange = {
                     name = it
-                    if (submitted) errors = validateProductForm(it, price, category, stock)
+                    if (submitted) errors = validateProductForm(it, price, country, stock)
                 },
                 label = { Text("Nombre del producto") },
                 isError = errors.name != null,
@@ -80,7 +80,7 @@ fun UIAddProductActivity() {
                 value = price,
                 onValueChange = {
                     price = it
-                    if (submitted) errors = validateProductForm(name, it, category, stock)
+                    if (submitted) errors = validateProductForm(name, it, country, stock)
                 },
                 label = { Text("Precio ($)") },
                 isError = errors.price != null,
@@ -90,14 +90,14 @@ fun UIAddProductActivity() {
                 singleLine = true
             )
             OutlinedTextField(
-                value = category,
+                value = country,
                 onValueChange = {
-                    category = it
+                    country = it
                     if (submitted) errors = validateProductForm(name, price, it, stock)
                 },
-                label = { Text("Categoría") },
-                isError = errors.category != null,
-                supportingText = errors.category?.let { msg -> { Text(msg) } },
+                label = { Text("País") },
+                isError = errors.country != null,
+                supportingText = errors.country?.let { msg -> { Text(msg) } },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true
             )
@@ -105,7 +105,7 @@ fun UIAddProductActivity() {
                 value = stock,
                 onValueChange = {
                     stock = it
-                    if (submitted) errors = validateProductForm(name, price, category, it)
+                    if (submitted) errors = validateProductForm(name, price, country, it)
                 },
                 label = { Text("Stock (unidades)") },
                 isError = errors.stock != null,
@@ -118,14 +118,14 @@ fun UIAddProductActivity() {
             Button(
                 onClick = {
                     submitted = true
-                    val validation = validateProductForm(name, price, category, stock)
+                    val validation = validateProductForm(name, price, country, stock)
                     errors = validation
                     if (!validation.hasErrors) {
                         db.insert(
                             Product(
                                 name = name.trim(),
                                 price = price.toDouble(),
-                                category = category.trim(),
+                                country = country.trim(),
                                 stock = stock.toInt()
                             )
                         )

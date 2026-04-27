@@ -46,7 +46,7 @@ fun UIEditProductActivity(productId: Long) {
 
     var name by remember { mutableStateOf(product.name) }
     var price by remember { mutableStateOf(product.price.toString()) }
-    var category by remember { mutableStateOf(product.category) }
+    var country by remember { mutableStateOf(product.country) }
     var stock by remember { mutableStateOf(product.stock.toString()) }
     var errors by remember { mutableStateOf(ProductFormErrors()) }
     var submitted by remember { mutableStateOf(false) }
@@ -75,7 +75,7 @@ fun UIEditProductActivity(productId: Long) {
                 value = name,
                 onValueChange = {
                     name = it
-                    if (submitted) errors = validateProductForm(it, price, category, stock)
+                    if (submitted) errors = validateProductForm(it, price, country, stock)
                 },
                 label = { Text("Nombre del producto") },
                 isError = errors.name != null,
@@ -87,7 +87,7 @@ fun UIEditProductActivity(productId: Long) {
                 value = price,
                 onValueChange = {
                     price = it
-                    if (submitted) errors = validateProductForm(name, it, category, stock)
+                    if (submitted) errors = validateProductForm(name, it, country, stock)
                 },
                 label = { Text("Precio ($)") },
                 isError = errors.price != null,
@@ -97,14 +97,14 @@ fun UIEditProductActivity(productId: Long) {
                 singleLine = true
             )
             OutlinedTextField(
-                value = category,
+                value = country,
                 onValueChange = {
-                    category = it
+                    country = it
                     if (submitted) errors = validateProductForm(name, price, it, stock)
                 },
-                label = { Text("Categoría") },
-                isError = errors.category != null,
-                supportingText = errors.category?.let { msg -> { Text(msg) } },
+                label = { Text("País") },
+                isError = errors.country != null,
+                supportingText = errors.country?.let { msg -> { Text(msg) } },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true
             )
@@ -112,7 +112,7 @@ fun UIEditProductActivity(productId: Long) {
                 value = stock,
                 onValueChange = {
                     stock = it
-                    if (submitted) errors = validateProductForm(name, price, category, it)
+                    if (submitted) errors = validateProductForm(name, price, country, it)
                 },
                 label = { Text("Stock (unidades)") },
                 isError = errors.stock != null,
@@ -125,14 +125,14 @@ fun UIEditProductActivity(productId: Long) {
             Button(
                 onClick = {
                     submitted = true
-                    val validation = validateProductForm(name, price, category, stock)
+                    val validation = validateProductForm(name, price, country, stock)
                     errors = validation
                     if (!validation.hasErrors) {
                         db.update(
                             product.copy(
                                 name = name.trim(),
                                 price = price.toDouble(),
-                                category = category.trim(),
+                                country = country.trim(),
                                 stock = stock.toInt()
                             )
                         )

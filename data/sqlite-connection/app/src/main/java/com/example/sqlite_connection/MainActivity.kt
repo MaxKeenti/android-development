@@ -129,7 +129,7 @@ fun ProductListItem(product: Product, onEdit: () -> Unit, onDelete: () -> Unit) 
                     style = MaterialTheme.typography.titleMedium
                 )
                 Text(
-                    text = "Categoría: ${product.category}",
+                    text = "País: ${product.country}",
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Text(

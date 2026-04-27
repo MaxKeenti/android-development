@@ -9,12 +9,12 @@ class ProductDatabaseHelper(context: Context) : SQLiteOpenHelper(
 ) {
     companion object {
         private const val DATABASE_NAME = "shop.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
         private const val TABLE = "products"
         private const val COL_ID = "id"
         private const val COL_NAME = "name"
         private const val COL_PRICE = "price"
-        private const val COL_CATEGORY = "category"
+        private const val COL_COUNTRY = "country"
         private const val COL_STOCK = "stock"
     }
 
@@ -25,7 +25,7 @@ class ProductDatabaseHelper(context: Context) : SQLiteOpenHelper(
                 $COL_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                 $COL_NAME TEXT NOT NULL,
                 $COL_PRICE REAL NOT NULL,
-                $COL_CATEGORY TEXT NOT NULL,
+                $COL_COUNTRY TEXT NOT NULL,
                 $COL_STOCK INTEGER NOT NULL
             )
             """.trimIndent()
@@ -39,11 +39,11 @@ class ProductDatabaseHelper(context: Context) : SQLiteOpenHelper(
 
     fun insert(product: Product): Long {
         return writableDatabase.compileStatement(
-            "INSERT INTO $TABLE ($COL_NAME, $COL_PRICE, $COL_CATEGORY, $COL_STOCK) VALUES (?, ?, ?, ?)"
+            "INSERT INTO $TABLE ($COL_NAME, $COL_PRICE, $COL_COUNTRY, $COL_STOCK) VALUES (?, ?, ?, ?)"
         ).use { stmt ->
             stmt.bindString(1, product.name)
             stmt.bindDouble(2, product.price)
-            stmt.bindString(3, product.category)
+            stmt.bindString(3, product.country)
             stmt.bindLong(4, product.stock.toLong())
             stmt.executeInsert()
         }
@@ -58,7 +58,7 @@ class ProductDatabaseHelper(context: Context) : SQLiteOpenHelper(
                         id = cursor.getLong(cursor.getColumnIndexOrThrow(COL_ID)),
                         name = cursor.getString(cursor.getColumnIndexOrThrow(COL_NAME)),
                         price = cursor.getDouble(cursor.getColumnIndexOrThrow(COL_PRICE)),
-                        category = cursor.getString(cursor.getColumnIndexOrThrow(COL_CATEGORY)),
+                        country = cursor.getString(cursor.getColumnIndexOrThrow(COL_COUNTRY)),
                         stock = cursor.getInt(cursor.getColumnIndexOrThrow(COL_STOCK))
                     )
                 )
@@ -76,7 +76,7 @@ class ProductDatabaseHelper(context: Context) : SQLiteOpenHelper(
                     id = cursor.getLong(cursor.getColumnIndexOrThrow(COL_ID)),
                     name = cursor.getString(cursor.getColumnIndexOrThrow(COL_NAME)),
                     price = cursor.getDouble(cursor.getColumnIndexOrThrow(COL_PRICE)),
-                    category = cursor.getString(cursor.getColumnIndexOrThrow(COL_CATEGORY)),
+                    country = cursor.getString(cursor.getColumnIndexOrThrow(COL_COUNTRY)),
                     stock = cursor.getInt(cursor.getColumnIndexOrThrow(COL_STOCK))
                 )
             }
@@ -86,11 +86,11 @@ class ProductDatabaseHelper(context: Context) : SQLiteOpenHelper(
 
     fun update(product: Product): Int {
         return writableDatabase.compileStatement(
-            "UPDATE $TABLE SET $COL_NAME = ?, $COL_PRICE = ?, $COL_CATEGORY = ?, $COL_STOCK = ? WHERE $COL_ID = ?"
+            "UPDATE $TABLE SET $COL_NAME = ?, $COL_PRICE = ?, $COL_COUNTRY = ?, $COL_STOCK = ? WHERE $COL_ID = ?"
         ).use { stmt ->
             stmt.bindString(1, product.name)
             stmt.bindDouble(2, product.price)
-            stmt.bindString(3, product.category)
+            stmt.bindString(3, product.country)
             stmt.bindLong(4, product.stock.toLong())
             stmt.bindLong(5, product.id)
             stmt.executeUpdateDelete()
