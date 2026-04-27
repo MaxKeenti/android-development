@@ -119,13 +119,17 @@ fun Sensors(context: Context) {
         val mazeTemplate = remember {
             listOf(
                 "WWWWWWWWWWWW",
-                "WS   W     W",
-                "WWWW W W WWW",
+                "WS         W",
+                "WWWWWWWW   W",
+                "W        W W",
+                "W WWWWWWWW W",
+                "W W      W W",
+                "W W WWWW W W",
+                "W W    W W W",
+                "W WWWW W W W",
                 "W    W W   W",
-                "W WWWW WWW W",
-                "W    W   W W",
-                "W WWWWWW W W",
-                "W      W   W",
+                "WWWW W WWWWW",
+                "W    W     W",
                 "W WWWWWWWW W",
                 "W          G",
                 "WWWWWWWWWWWW"
