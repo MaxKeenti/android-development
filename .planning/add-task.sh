@@ -24,11 +24,21 @@ if [ ! -d ".git" ] || [ ! -f "README.md" ]; then
 fi
 
 # Prompt for task details
-read -p "Task name (kebab-case, e.g., custom-button-component): " TASK_NAME
-if [ -z "$TASK_NAME" ]; then
-  echo -e "${RED}Error: Task name cannot be empty${NC}"
-  exit 1
-fi
+while true; do
+  read -p "Task name (kebab-case, e.g., custom-button-component): " TASK_NAME
+  if [ -z "$TASK_NAME" ]; then
+    echo -e "${RED}Error: Task name cannot be empty${NC}"
+    continue
+  fi
+  
+  # Validate kebab-case: lowercase letters, numbers, hyphens only; start and end with alphanumeric
+  if ! echo "$TASK_NAME" | grep -qE '^[a-z0-9]([a-z0-9-]*[a-z0-9])?$'; then
+    echo -e "${RED}Error: Task name must be kebab-case (lowercase letters, numbers, hyphens only)${NC}"
+    echo -e "${RED}  Examples: custom-button, sqlite-crud, sensor-logger${NC}"
+    continue
+  fi
+  break
+done
 
 echo ""
 echo "Available topics (from Topic Decision Gate):"
@@ -62,12 +72,6 @@ esac
 read -p "Teacher/Assigned by (optional): " TEACHER
 read -p "Primary concept or 'What It Demonstrates' (e.g., 'SQLite with prepared statements'): " CONCEPT
 read -p "Brief description of the task: " DESCRIPTION
-
-# Validate kebab-case
-if [[ ! "$TASK_NAME" =~ ^[a-z0-9]([a-z0-9-]*[a-z0-9])?$ ]]; then
-  echo -e "${RED}Error: Task name must be kebab-case (lowercase letters, numbers, hyphens only)${NC}"
-  exit 1
-fi
 
 # Check if task already exists
 TASK_DIR="$TOPIC/$TASK_NAME"
