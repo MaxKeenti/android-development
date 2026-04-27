@@ -6,6 +6,7 @@ Tasks in this topic teach Data persistence, local database, file storage.
 
 | Task | Primary Concept | Notes |
 |------|----------------|-------|
+| [datastore-implementation](datastore-implementation/) | DataStore, Protocol Buffers, proto-based persistence | [NOTES.md](datastore-implementation/NOTES.md) |
 | [sqlite-connection](sqlite-connection/) | SQLite database, SQLiteOpenHelper | [NOTES.md](sqlite-connection/NOTES.md) |
 
 ## When to Add to data/

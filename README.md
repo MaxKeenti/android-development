@@ -26,6 +26,7 @@ See [sensors/README.md](sensors/README.md) for the topic overview.
 
 | Task | What It Demonstrates |
 |------|---------------------|
+| [datastore-implementation](data/datastore-implementation/) | DataStore with Protocol Buffers for proto-based user preferences |
 | [sqlite-connection](data/sqlite-connection/) | Basic SQLite connection object setup for a local Android database |
 
 See [data/README.md](data/README.md) for the topic overview.
