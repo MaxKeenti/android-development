@@ -42,7 +42,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Sensors(context = this)
+            SensormanagementTheme {
+                Sensors(context = this@MainActivity)
+            }
         }
     }
 }
