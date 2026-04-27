@@ -2,6 +2,7 @@ package com.example.sqlite_connection
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -47,10 +48,19 @@ fun UIMainActivity(refreshKey: Int) {
     val context = LocalContext.current
     val db = remember { ProductDatabaseHelper(context) }
     val products by remember(refreshKey) { mutableStateOf(db.getAll()) }
+    val deviceId = Settings.Secure.getString(context.contentResolver, Settings.Secure.ANDROID_ID)
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Tienda Demo — Productos") })
+            TopAppBar(title = {
+                Column {
+                    Text("Tienda Demo — Productos")
+                    Text(
+                        text = "Device ID: $deviceId",
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                }
+            })
         },
         floatingActionButton = {
             FloatingActionButton(onClick = {
