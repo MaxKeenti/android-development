@@ -111,10 +111,12 @@ fun Sensors(context: Context) {
 
             // Row 5 – horizontal bar from left, gap on right toward goal
             Rect(t, height * 0.86f, width * 0.62f, height * 0.86f + t),
-            
+
             // Final corridor walls: narrow passage from Row 5 gap down to goal
             // Left wall of corridor (from 62% position down)
-            Rect(width * 0.62f, height * 0.86f, width * 0.62f + t, height - t),
+            Rect(width * 0.62f, height * 0.86f, width * 0.62f + t, height * 0.95f),
+            // Right wall of corridor (closes off path, forces ball down)
+            Rect(width * 0.75f, height * 0.86f, width * 0.75f + t, height * 0.95f),
         )
     }
 
