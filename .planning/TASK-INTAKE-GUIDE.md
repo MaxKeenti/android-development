@@ -1,234 +1,141 @@
-# Task Intake Guide
+# Task Intake Guide — Integrated with 02-Ongoing-Task-Accumulation
+
+This guide walks through the complete task intake workflow, which builds on and integrates with the established **Phase 2: Ongoing Task Accumulation** pattern.
+
+See the full workflow spec: `.planning/phases/02-ongoing-task-accumulation/02-01-PLAN.md`
 
 ## Overview
 
-When your teacher assigns a new Android development task, use this workflow to:
-1. Create an organized directory structure for the task
-2. Initialize the project setup with a README
-3. Track the work in git from the start
+When the teacher assigns a new Android development task:
 
-This workflow is designed to scale — invoke it each time a new task arrives.
+1. **Create task directory** — Run `.planning/add-task.sh` to scaffold `{topic}/{task}/` with NOTES.md
+2. **Implement the task** — Build the app in that directory
+3. **Complete NOTES.md** — Document all four required sections with real content
+4. **Update README files** — Add the task to topic and root README indices
+5. **Commit to git** — All work tracked in history
+
+This ensures every task lands in the right place on the same day—no debt accumulation.
 
 ## Quick Start
 
-### Option 1: Interactive Script (Recommended)
+### Step 1: Create the Task Directory
 
 ```bash
 cd /path/to/android-development
 ./.planning/add-task.sh
 ```
 
-The script will:
-- Ask for the task name (kebab-case)
-- Show available topics and let you choose
-- Ask for the teacher's name and task description
-- Create the directory structure
-- Commit it to git
+The script prompts for:
+- Task name (kebab-case)
+- Topic (from Topic Decision Gate)
+- Teacher name, concept, description
 
-### Option 2: Manual Creation
+Then creates `{topic}/{task}/NOTES.md` with the required template and commits it.
 
-If you prefer to create the structure manually:
+### Step 2: Implement the Task
 
+Navigate and build the app:
 ```bash
-# Create the directory
-mkdir -p <topic>/<task-name>
-
-# Create README
-cat > <topic>/<task-name>/README.md << 'TASKEOF'
-# Task: <Human Readable Name>
-
-**Topic:** <topic>
-**Status:** In Progress
-**Assigned by:** <Teacher Name>
-**Date:** 2026-04-27
-
-## Task Description
-
-<Paste task description here>
-
-## Learning Objectives
-- [ ] 
-- [ ] 
-
-## Implementation Progress
-
-### Phase 1: Setup
-- [ ] Create Android project structure
-- [ ] Set up dependencies
-- [ ] Initialize git
-
-### Phase 2: Implementation
-- [ ] 
-- [ ] 
-
-### Phase 3: Testing & Documentation
-- [ ] 
-- [ ] 
-
-## Key Concepts
-<!-- Add as you learn -->
-
-## Challenges & Solutions
-<!-- Document as you go -->
-
-## References
-<!-- Links to docs and examples -->
-
-## Notes
-<!-- Implementation insights -->
-TASKEOF
-
-# Commit
-git add <topic>/<task-name>/README.md
-git commit -m "feat(<topic>): add new task - <task-name>"
+cd {topic}/{task}
+# Scaffold the Android project
+# Implement the task
 ```
 
-## Topics
+### Step 3: Complete NOTES.md
 
-Existing topics in the project:
+The template has four **mandatory** sections:
 
-| Topic | Purpose | Examples |
-|-------|---------|----------|
-| **ui** | Jetpack Compose UI components, themes, layouts | Button components, theme systems, custom layouts |
-| **data** | Data persistence, storage, database operations | SQLite, SharedPreferences, file I/O |
-| **sensors** | Hardware sensors, motion, location | Accelerometer, gyroscope, proximity sensors |
+```markdown
+# Task Name
 
-### Creating a New Topic
+## 1. Task Assigned
+- [2-4 bullets: what the teacher asked you to build]
 
-If a task doesn't fit into ui/data/sensors, create a new topic:
+## 2. Concept Covered
+- [2-4 bullets: the primary Android/Compose concept]
+
+## 3. What Was Hard
+- [2-4 bullets: friction points, gotchas, surprises]
+
+## 4. Key Code Snippet
+[One focused block: 5-15 lines showing the core idea]
+```
+
+All four sections **must** have real content—no template placeholders.
+
+### Step 4: Update README Files
+
+Update `{topic}/README.md` to list the new task in its Tasks table.
+Update root `README.md` to list the new task in the correct topic section.
+
+Use the helper to find what needs updating:
+```bash
+./.planning/update-readmes.sh
+```
+
+See `.planning/phases/02-ongoing-task-accumulation/02-01-PLAN.md` **Task 3** for exact update rules.
+
+### Step 5: Commit
 
 ```bash
-mkdir -p <new-topic>/<task-name>
-# Follow the same README structure
+# Implementation
+git add {topic}/{task}/app/
+git commit -m "feat({topic}): implement {task}"
+
+# README updates
+git add README.md {topic}/README.md
+git commit -m "docs: add {task} to {topic} task index"
 ```
+
+## Topic Decision Gate
+
+Use this table to classify incoming tasks:
+
+| If the task primarily teaches... | Topic folder |
+|----------------------------------|-------------|
+| UI layout, Compose components, navigation, theming | `ui/` |
+| Audio, video, camera, media playback | `media/` |
+| Data persistence, local database, file storage | `data/` |
+| Network calls, REST APIs, remote data | `network/` |
+| Background work, services, scheduling | `background/` |
+| Sensors, location, hardware APIs | `sensors/` |
+
+If unsure, ask the teacher. If a task doesn't fit any topic, create a new one and add it to this table.
 
 ## Naming Conventions
 
-### Task Names
-- Use **kebab-case** (lowercase, hyphens only)
-- Be descriptive but concise
-- Examples:
-  - ✅ `custom-button-component`
-  - ✅ `sqlite-crud-app`
-  - ✅ `accelerometer-maze-game`
-  - ❌ `CustomButtonComponent`
-  - ❌ `custom_button_component`
+Task names use **kebab-case**:
+- ✅ `custom-button-component`, `sqlite-crud-app`, `sensor-logger`
+- ❌ `CustomButton`, `custom_button`, `Custom Button`
 
-### Directory Structure After Creation
+## Verification
 
-```
-<topic>/<task-name>/
-├── README.md              # Task description and progress
-├── app/                   # Android project (you add this)
-│   ├── build.gradle.kts
-│   ├── src/
-│   │   ├── main/
-│   │   ├── test/
-│   │   └── androidTest/
-│   └── ...
-├── build.gradle.kts       # Root build config
-├── settings.gradle.kts    # Project settings
-├── gradle/
-│   └── libs.versions.toml # Version catalog
-└── ...
-```
-
-## Workflow: After Creating the Task Directory
-
-1. **Create the Android project** (in the task directory)
-   ```bash
-   cd <topic>/<task-name>
-   # Option A: Copy from a template
-   cp -r ../reference-project/* .
-   
-   # Option B: Create from scratch with Android Studio
-   # Or use `android-studio <topic>/<task-name> &`
-   ```
-
-2. **Start implementing**
-   - Update README.md with implementation progress
-   - Add code to `app/src/main/java/`
-   - Write tests in `app/src/test/` and `app/src/androidTest/`
-
-3. **Commit frequently**
-   ```bash
-   git add app/
-   git commit -m "feat(<topic>): implement <task-name>"
-   git add README.md
-   git commit -m "docs(<topic>): document <task-name> progress"
-   ```
-
-4. **Document your learnings**
-   - Update README.md with key concepts
-   - Note challenges and how you solved them
-   - Link to relevant documentation
-
-## Example Workflows
-
-### Example 1: New UI Component Task
+After completing a task:
 
 ```bash
-./.planning/add-task.sh
-# Input: task-name = custom-slider
-# Input: topic = ui
-# Input: description = Build a custom Range Slider component with Material Design 3 styling
+# NOTES.md exists with all four sections
+ls {topic}/{task}/NOTES.md
+grep -c "## 1. Task Assigned" {topic}/{task}/NOTES.md      # should be 1
+grep -c "## 2. Concept Covered" {topic}/{task}/NOTES.md    # should be 1
+grep -c "## 3. What Was Hard" {topic}/{task}/NOTES.md      # should be 1
+grep -c "## 4. Key Code Snippet" {topic}/{task}/NOTES.md   # should be 1
 
-# Automatically creates:
-# ui/custom-slider/README.md
-# ui/custom-slider/.gitkeep
-
-cd ui/custom-slider
-# Now scaffold the Android project and start building...
+# Task appears in both README files
+grep "{task}" {topic}/README.md                 # should match
+grep "{topic}/{task}/" README.md                # should match (root README link)
 ```
 
-### Example 2: New Database Task
+## Full Workflow
 
-```bash
-./.planning/add-task.sh
-# Input: task-name = room-database-integration
-# Input: topic = data
-# Input: description = Migrate from SQLite to Room database
+See `.planning/phases/02-ongoing-task-accumulation/02-01-PLAN.md` for the complete, detailed workflow including:
+- All four Task steps with detailed instructions
+- Threat model and STRIDE analysis
+- Acceptance criteria and verification procedures
+- Success criteria and definition of done
 
-# Automatically creates:
-# data/room-database-integration/README.md
-# data/room-database-integration/.gitkeep
+## See Also
 
-cd data/room-database-integration
-# Create the Android project and implement Room integration...
-```
-
-## Tips
-
-- **Start early, commit often** — Each task is a learning journey; commit progress as you go
-- **Document as you learn** — Update README.md frequently with new insights
-- **Reference existing tasks** — Look at completed tasks in the same topic for patterns
-- **Test thoroughly** — Android testing patterns are part of learning; include unit and integration tests
-- **Keep notes** — Use the README to document challenges, solutions, and key learnings
-
-## Continuous Improvement
-
-This workflow is designed for continuous use:
-- Each task invocation is independent
-- Tasks can be worked on in any order
-- The directory structure scales as more tasks arrive
-- Git history preserves the complete learning journey
-
-## FAQ
-
-**Q: What if I want to rename a task after creating it?**
-A: You can rename the directory manually:
-```bash
-git mv <topic>/<old-name> <topic>/<new-name>
-```
-
-**Q: Can I move a task to a different topic?**
-A: Yes, use git mv:
-```bash
-git mv <old-topic>/<task-name> <new-topic>/<task-name>
-```
-
-**Q: What if a task spans multiple topics?**
-A: Create the primary implementation in the most relevant topic, and reference it from others in their READMEs.
-
-**Q: How do I share progress on a task?**
-A: Push to the repository and the README.md serves as documentation for anyone reading the history.
+- **Helper script:** `.planning/add-task.sh`
+- **README scanner:** `.planning/update-readmes.sh`
+- **Existing examples:** `ui/news/`, `data/sqlite-connection/`, `sensors/sensor-management/`
+- **Root README:** Topic Decision Gate table, NOTES.md template, package naming
