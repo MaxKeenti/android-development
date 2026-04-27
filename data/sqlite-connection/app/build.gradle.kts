@@ -6,13 +6,15 @@ plugins {
 android {
     namespace = "com.example.sqlite_connection"
     compileSdk {
-        version = release(37)
+        version = release(36) {
+            minorApiLevel = 1
+        }
     }
 
     defaultConfig {
         applicationId = "com.example.sqlite_connection"
-        minSdk = 37
-        targetSdk = 37
+        minSdk = 36
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
